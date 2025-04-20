@@ -1,0 +1,538 @@
+@font-face {
+  font-family: serrat;
+  src: url(./montserrat_5.2.5.zip);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* perspective: 800px; */
+}
+
+*::selection{
+  background-color: #fff;
+  color: #95c11e;
+}
+
+body::-webkit-scrollbar{
+  display: block;
+  width: 8px;
+  background-color: #95c11e;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.cursor {
+  height: 20px;
+  width: 20px;
+  background-color: #95c11e;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+}
+
+.cursor-blur {
+  height: 500px;
+  width: 500px;
+  background-color: #96c11e3c;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9;
+  filter: blur(40px);
+}
+
+.nav {
+  height: 145px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 150px;
+  gap: 50px;
+  position: fixed;
+  z-index: 99;
+}
+
+.nav img {
+  height: 75px;
+}
+
+.nav h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav h4:hover{
+  color: black;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+
+.main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+
+.page1 h1 {
+  font-size: 100px;
+  font-weight: 900;
+  position: relative;
+}
+
+.page1 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  position: absolute;
+  color: black;
+  top: -5px;
+  left: -5px;
+  -webkit-text-stroke: 1.5px #95c11e;
+  z-index: -1;
+}
+
+.page1 h2 {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.page1 p {
+  font-size: 20px;
+  font-weight: 500;
+  width: 45%;
+}
+
+.page1 .arrow{
+  height: 230px;
+  width: 230px;
+  background-color: transparent;
+  position: absolute;
+  left: -3%;
+  bottom: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #95c11e; 
+  transition: all ease 0.5s;
+} 
+.page1 .arrow i{
+  font-size: 50px;
+  font-weight: 100;
+}
+
+.page1 .arrow:hover{
+  scale: 0.4;
+  background-color: #95c11e;
+}
+
+.page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+.scroller {
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroller h4 {
+  display: inline-block;
+  font-size: 120px;
+  font-weight: 900;
+  margin-right: 30px;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  transition: all linear 0.5s;
+}
+
+.scroller h4:hover {
+  color: #95c11e;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.about-us {
+  height: 40vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 50px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 10;
+}
+
+.about-us img {
+  height: 180px;
+  width: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-us-in {
+  width: 50%;
+  text-align: center;
+}
+
+.about-us-in h3 {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.about-us-in p {
+  font-size: 21px;
+  line-height: 36px;
+}
+
+.cards-container {
+  /* background-color: red; */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+  margin-top: 80px;
+}
+
+.card {
+  height: 80%;
+  width: 25%;
+  /* background-color: blue; */
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  transition: all ease 0.6s;
+
+}
+
+#card1{
+    background-image: url("./card1.avif");
+}
+
+#card2{
+    background-image: url("./card2.webp");
+}
+
+#card3{
+    background-image: url("./card3.avif");
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding: 30px;
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+
+.overlay h4{
+  font-size: 40px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 140px;
+  margin-bottom: 25px;
+}
+
+.overlay p{
+  color: black;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.card:hover .overlay{
+  opacity: 1;
+}
+
+.card:hover {
+  transform: rotate3d(-1,1,0,20deg);
+}
+
+.green-box{
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient( to left bottom, #27A535, #ACE022);
+
+}
+
+.green-box h4{
+  width: 50%;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 50px;
+  color: black;
+  font-weight: 900;
+  text-align: center;
+}
+
+.green-box img{
+  height: 100%;
+  object-fit: cover;
+  width: 13%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page3{
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.page3 p{
+  font-size: 30px;
+  font-weight: 900;
+  width: 62%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 50px;
+}
+
+.page3 img{
+  position: absolute;
+  height: 50px;
+}
+
+.page3 .colon1{
+  left: 13%;
+  top: 20%;
+}
+
+.page3 .colon2{
+  bottom: 22%;
+  right: 14%;
+}
+
+.page4{
+  height: 30vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.elem{
+  height: 65%;
+  width: 26%;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.elem h2{
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: #95c11e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: black;
+  position: absolute;
+  z-index: 10;
+  transition: all ease 0.5s;
+}
+
+.elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.2;
+}
+
+.elem:hover h2{
+  color: #fff;
+  background-color: transparent;
+}
+
+.elem:hover img{
+  scale: 1;
+}
+
+.page4 h1{
+  font-size: 75px;
+  position: absolute;
+  top: -12%;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+}
+
+.footer {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient( to left bottom, #27A535 , #ACE022);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.footer .top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  margin-right: 150px;
+  position: relative;
+  z-index: 9;
+}
+
+.footer .bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0px 110px;
+  position: relative;
+  z-index: 9;
+}
+
+.footer>img{
+  height: 85%;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}
+
+
+.f1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.f1 img{
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+.f1 img:hover{
+  scale: 1.1;
+}
+
+.f1 .icons{
+  font-size: 30px;
+}
+
+
+
+
+.f2 h3{
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 50px;
+  color: black;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.f3 h3{
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 50px;
+  color: black;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.f4 h3{
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.footer .bottom h3{
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.footer .bottom h3:hover{
+  color: #fff;
+}
+
+.footer .top h3:hover{
+  color: #fff;
+}
