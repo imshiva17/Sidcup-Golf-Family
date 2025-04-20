@@ -265,15 +265,15 @@ video {
 }
 
 #card1{
-    background-image: url("./card1.avif");
+    background-image: url("./card1.jpg");
 }
 
 #card2{
-    background-image: url("./card2.webp");
+    background-image: url("./card2.jpg");
 }
 
 #card3{
-    background-image: url("./card3.avif");
+    background-image: url("./card3.jpg");
 }
 
 .overlay{
